@@ -165,8 +165,8 @@ root.render(<App />);
 ```css
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: darkcyan;
-  color: #f5f5f5;
+  background-color: #000;
+  color: #61DBFB;
 }
 ```
 
