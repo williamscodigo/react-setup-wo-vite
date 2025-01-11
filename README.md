@@ -36,6 +36,13 @@ my-react-app/
 
 ## 1. Initialize empty project
 ```bash
+    # Step 1: Create a folder named "my-react-app"
+    mkdir my-react-app
+
+    # Step 2: Switch to the "my-react-app" folder
+    cd my-react-app
+
+    # Step 3: Initialize a new Node.js project with a package.json file
     npm init -y
 ```
 
