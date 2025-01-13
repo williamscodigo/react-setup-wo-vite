@@ -93,39 +93,42 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',  // Main entry point for your app
+  entry: './src/index.jsx', // Updated to reflect the new file name
   output: {
-    path: path.resolve(__dirname, 'dist'),  // Output folder
-    filename: 'bundle.js',  // Output file name
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
-  mode: 'development',  // Set mode to development or production
+  mode: 'development',
+  resolve: {
+    extensions: ['.js', '.jsx'], // Add .jsx to the list of resolvable extensions
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,  // Use Babel for JavaScript files
+        test: /\.jsx?$/, // Match both .js and .jsx files
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
       },
       {
-        test: /\.css$/,  // Use style and css loaders for CSS
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
     ],
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),  // Serve static files from the 'dist' folder
+      directory: path.join(__dirname, 'dist'),
     },
     port: 3000,
     hot: true,
-    open: true,  // Open the browser automatically
+    open: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),  // Path to your template HTML
-      filename: 'index.html',  // Name of the output HTML file
+      template: path.resolve(__dirname, 'public', 'index.html'),
+      filename: 'index.html',
     }),
   ],
 };

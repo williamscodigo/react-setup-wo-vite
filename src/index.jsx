@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';  // Import from 'react-dom/client'
 import './style.css';
 
 // Define the Header component
-const Heading = () => (<h1>Hello World!, This is React!!!</h1>);
+const Heading = () => (<h1>Hello World!, From React!!!</h1>);
 
 // Define the Container component and include the Header inside
 const Container = () => (
